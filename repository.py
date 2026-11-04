@@ -4,7 +4,6 @@ from typing import Any, Protocol
 import psycopg
 from psycopg.rows import dict_row
 
-
 DATABASE_URL = "postgresql://postgres:postgres@localhost:5432/city_transport"
 
 
