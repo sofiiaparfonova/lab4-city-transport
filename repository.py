@@ -1,4 +1,3 @@
-
 from typing import Any, Protocol
 
 import psycopg
@@ -25,9 +24,7 @@ class PostgresRouteRepository:
 
     def get_all(self) -> list[dict[str, Any]]:
         with psycopg.connect(self.database_url, row_factory=dict_row) as conn:
-            return conn.execute(
-                "SELECT * FROM transport_routes ORDER BY id"
-            ).fetchall()
+            return conn.execute("SELECT * FROM transport_routes ORDER BY id").fetchall()
 
     def get_by_id(self, route_id: int) -> dict[str, Any] | None:
         with psycopg.connect(self.database_url, row_factory=dict_row) as conn:
@@ -62,9 +59,7 @@ class PostgresRouteRepository:
 
             return result
 
-    def update(
-        self, route_id: int, data: dict[str, Any]
-    ) -> dict[str, Any] | None:
+    def update(self, route_id: int, data: dict[str, Any]) -> dict[str, Any] | None:
         with psycopg.connect(self.database_url, row_factory=dict_row) as conn:
             return conn.execute(
                 """
