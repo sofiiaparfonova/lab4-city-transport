@@ -1,0 +1,27 @@
+[project]
+name = "lab4-cp"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Sofia", email = "sofiaparfjonovagmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi>=0.162.0",
+    "psycopg[binary]>=3.3.8",
+    "uvicorn>=0.54.0",
+]
+
+[project.scripts]
+lab4-cp = "lab4_cp:main"
+
+[build-system]
+requires = ["uv_build>=0.12.13,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "mypy>=2.4.1",
+    "ruff>=0.17.3",
+]
